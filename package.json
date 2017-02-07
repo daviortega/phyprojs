@@ -1,0 +1,31 @@
+{
+	"name": "phyprojs",
+	"version": "0.0.1",
+	"description": "Advanced Phylogenetic Profile for Biologists - JS",
+	"main": "index.js",
+	"scripts": {
+		"test": "node_modules/.bin/mocha 'src/*.tests.js'"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/daviortega/phyprojs.git"
+	},
+	"keywords": [
+		"bioinformatics"
+	],
+	"author": "Davi Ortega",
+	"contributors": [
+		{
+			"name": "Davi Ortega"
+		}
+	],
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/daviortega/phyprojs/issues"
+	},
+	"homepage": "https://github.com/daviortega/phyprojs#readme",
+	"devDependencies": {
+		"chai": "^3.5.0",
+		"mocha": "^3.2.0"
+	}
+}
