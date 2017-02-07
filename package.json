@@ -27,6 +27,7 @@
   "homepage": "https://github.com/daviortega/phyprojs#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "coveralls": "^2.11.16",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0"
   }
