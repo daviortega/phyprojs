@@ -9,4 +9,9 @@ describe('My first test suite', () => {
 			tellMe = hello.to('Davi')
 		expect('Hello, Davi').equal(tellMe)
 	})
+	it('Testing orNot', function() {
+		let hello = new HelloWorld(),
+			tellMe = hello.orNot('Davi')
+		expect(tellMe).equal('Not Hello, for Davi')
+	})
 })

@@ -9,6 +9,6 @@ class HelloWord {
 		return this.heyThere + person
 	}
 	orNot(person) {
-		return 'Not ' + this.heyThere + ' for ' + person
+		return 'Not ' + this.heyThere + 'for ' + person
 	}
 }
