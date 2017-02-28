@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports =
-class HelloWord {
+class HelloWorld {
 	constructor() {
 		this.heyThere = 'Hello, '
 	}
