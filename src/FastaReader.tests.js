@@ -4,7 +4,7 @@
 let expect = require('chai').expect,
 	FastaReader = require('./FastaReader.js')
 
-describe('The constructor should have', function() {
+describe.only('The constructor should have', function() {
 	it('.headers', function() {
 		let fastareader = new FastaReader()
 		expect(fastareader.headers).to.exist
@@ -15,15 +15,15 @@ describe('The constructor should have', function() {
 	})
 })
 
-describe('Basics: ', function() {
-	it('read two sequence right', function() {
+describe.only('Basics: ', function() {
+	it('read two headers right', function() {
 		let fr = new FastaReader(),
 			fasta = '>header1\nDAVIDAVIDAVI\n>header2\nDDDAAAVVVIII\n',
 			expectedHeaders = ['header1', 'header2']
 		fr.fastareader(fasta)
 		expect(fr.headers).to.eql(expectedHeaders)
 	})
-	it('.sequences', function() {
+	it('read two sequences right', function() {
 		let fr = new FastaReader(),
 			fasta = '>header1\nDAVIDAVIDAVI\n>header2\nDDDAAAVVVIII\n',
 			expectedSequences = ['DAVIDAVIDAVI', 'DDDAAAVVVIII']
