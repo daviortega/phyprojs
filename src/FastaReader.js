@@ -10,9 +10,9 @@ class FastaReqder {
 	fastareader(chars) {
 		let toPush = ''
 		for (let step1 = 0; step1 < chars.length; step1++) {
-			if (chars.get(step1) === '>') {
-				while (chars.get(step1 + 1) !== '\\') {
-					toPush += chars.get(step1 + 1)
+			if (chars[step1] === '>') {
+				while (chars[step1 + 1] !== '\\') {
+					toPush += chars[step1 + 1]
 					step1++
 				}
 				this.headers.push(toPush)
