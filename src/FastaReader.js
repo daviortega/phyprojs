@@ -3,14 +3,20 @@
 module.exports =
 class FastaReqder {
 	constructor() {
-		this.headers = ''
-		this.sequences = ''
+		this.headers = []
+		this.sequences = []
 	}
 
 	fastareader(chars) {
+		let toPush = ''
 		for (let step1 = 0; step1 < chars.size(); step1++) {
-			if (chars.get(step1) === '>')
-				return 0
+			if (chars.get(step1) === '>') {
+				while (chars.get(step1 + 1) !== '\\') {
+					toPush += chars.get(step1 + 1)
+					step1++
+				}
+				this.headers.push(toPush)
+			}
 		}
 		return 0
 	}
