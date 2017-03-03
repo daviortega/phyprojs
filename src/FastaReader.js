@@ -22,6 +22,7 @@ class FastaReqder {
 				}
 				this.headers.push(headersToPush)
 				headersToPush = ''
+				x++
 			}
 			if (chars[x] !== '\n')
 				sequencesToPush += chars[x]
