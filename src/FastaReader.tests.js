@@ -17,17 +17,17 @@ describe('The constructor should have', function() {
 
 describe('Basics: ', function() {
 	it('read two sequence right', function() {
-		let fastareader = new FastaReader(),
+		let fr = new FastaReader(),
 			fasta = '>header1\nDAVIDAVIDAVI\n>header2\nDDDAAAVVVIII\n',
 			expectedHeaders = ['header1', 'header2']
-		fastareader(fasta)
-		expect(fastareader.headers).to.eql(expectedHeaders)
+		fr.fastareader(fasta)
+		expect(fr.headers).to.eql(expectedHeaders)
 	})
 	it('.sequences', function() {
-		let fastareader = new FastaReader(),
+		let fr = new FastaReader(),
 			fasta = '>header1\nDAVIDAVIDAVI\n>header2\nDDDAAAVVVIII\n',
 			expectedSequences = ['DAVIDAVIDAVI', 'DDDAAAVVVIII']
-		fastareader(fasta)
-		expect(fastareader.sequences).to.eql(expectedSequences)
+		fr.fastareader(fasta)
+		expect(fr.sequences).to.eql(expectedSequences)
 	})
 })
