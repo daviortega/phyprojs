@@ -9,7 +9,7 @@ class FastaReqder {
 
 	fastareader(chars) {
 		let toPush = ''
-		for (let step1 = 0; step1 < chars.size(); step1++) {
+		for (let step1 = 0; step1 < chars.length; step1++) {
 			if (chars.get(step1) === '>') {
 				while (chars.get(step1 + 1) !== '\\') {
 					toPush += chars.get(step1 + 1)
