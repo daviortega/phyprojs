@@ -9,15 +9,17 @@ class FastaReqder {
 
 	fastareader(chars) {
 		let headersToPush = ''
-		for (let step1 = 0; step1 < chars.length; step1++) {
-			if (chars[step1] === '>') {
-				while (chars[step1 + 1] !== '\n' && step1 + 1 < chars.length) {
-					headersToPush += chars[step1 + 1]
-					step1++
+		let sequencesToPush = ''
+		for (let x = 0; x < chars.length; x++) {
+			if (chars[x] === '>') {
+				while (chars[x + 1] !== '\n' && x + 1 < chars.length) {
+					headersToPush += chars[x + 1]
+					x++
 				}
 				this.headers.push(headersToPush)
 				headersToPush = ''
 			}
+			sequencesToPush += chars[x]
 		}
 		return 0
 	}
