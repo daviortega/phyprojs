@@ -12,8 +12,10 @@ class FastaReqder {
 		let sequencesToPush = ''
 		for (let x = 0; x < chars.length; x++) {
 			if (chars[x] === '>') {
-				if (sequencesToPush !== '')
+				if (sequencesToPush !== '') {
 					this.sequences.push(sequencesToPush)
+					sequencesToPush = ''
+				}
 				while (chars[x + 1] !== '\n' && x + 1 < chars.length) {
 					headersToPush += chars[x + 1]
 					x++
@@ -23,6 +25,7 @@ class FastaReqder {
 			}
 			sequencesToPush += chars[x]
 		}
+		this.sequences.push(sequencesToPush)
 		return 0
 	}
 }
