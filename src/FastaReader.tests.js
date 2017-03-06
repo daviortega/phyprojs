@@ -48,5 +48,14 @@ describe('Fasta reader test suite', function() {
 			expect(fr.sequences).to.eql(expectedSequences)
 		})
 	})
+	describe('Caching Errors ', function() {
+		it('no ">" at the first character should make invalid FASTA', function() {
+			let fr = new FastaReader(),
+				fasta = 'header1\nDAVIDA\n\nVIDAVIIIIIII\n>header2\nDDDAA\nAVVVIII\n'
+			expect(function() {
+				fr.fastareader(fasta)
+			}).to.throw('Not a valid FASTA')
+		})
+	})
 })
 
