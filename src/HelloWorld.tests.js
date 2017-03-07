@@ -31,5 +31,5 @@ describe('It must have a constructor', function() {
 		let hello = new HelloWorld()
 		expect(hello.heyThere).equal('Hello, ')
 	})
-	it('this is pending')
+	it('this will never be done')
 })
