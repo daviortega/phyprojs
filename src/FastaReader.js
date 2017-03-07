@@ -11,6 +11,8 @@ class FastaReqder {
 		let headersToPush = ''
 		let sequencesToPush = ''
 		for (let x = 0; x < chars.length; x++) {
+			if (chars[0] !== '>')
+				throw Error('Not a valid FASTA')
 			if (chars[x] === '>') {
 				if (sequencesToPush !== '') {
 					this.sequences.push(sequencesToPush)
