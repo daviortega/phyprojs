@@ -26,8 +26,11 @@ class FastaReqder {
 				headersToPush = ''
 				x++
 			}
-			if (chars[x] !== '\n')
+			if (chars[x] !== '\n') {
+				if (chars[x] !== 'A' && chars[x] !== 'C' && chars[x] !== 'D' && chars[x] !== 'E' && chars[x] !== 'F' && chars[x] !== 'G' && chars[x] !== 'H' && chars[x] !== 'I' && chars[x] !== 'L' && chars[x] !== 'M' && chars[x] !== 'N' && chars[x] !== 'P' && chars[x] !== 'Q' && chars[x] !== 'R' && chars[x] !== 'S' && chars[x] !== 'T' && chars[x] !== 'V' && chars[x] !== 'Y' && chars[x] !== 'W' && chars[x] !== 'U' && chars[x] !== 'O' && chars[x] !== 'X')
+					throw Error('Not a valid FASTA - Invalid character in sequence header1')
 				sequencesToPush += chars[x]
+			}
 		}
 		this.sequences.push(sequencesToPush)
 		return 0
