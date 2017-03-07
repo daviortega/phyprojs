@@ -56,6 +56,13 @@ describe('Fasta reader test suite', function() {
 				fr.fastareader(fasta)
 			}).to.throw('Not a valid FASTA')
 		})
+		it('no invalid characters in the sequence.', function() {
+			let fr = new FastaReader(),
+				fasta = '>header1\nDAVIDA\n\nVIDAVIIIIIII\nheader2\nDDDAA\nAVVVIII\n'
+			expect(function() {
+				fr.fastareader(fasta)
+			}).to.throw('Not a valid FASTA - Invalid character in sequence header1')
+		})
 	})
 })
 
