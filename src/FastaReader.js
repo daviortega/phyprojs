@@ -1,5 +1,7 @@
 'use strict'
 
+let VALIDCHAR = 'ACDEFGHILMNPQRSTVYWUOX'
+
 module.exports =
 class FastaReqder {
 	constructor() {
@@ -27,8 +29,11 @@ class FastaReqder {
 				x++
 			}
 			if (chars[x] !== '\n') {
-				if (chars[x] !== 'A' && chars[x] !== 'C' && chars[x] !== 'D' && chars[x] !== 'E' && chars[x] !== 'F' && chars[x] !== 'G' && chars[x] !== 'H' && chars[x] !== 'I' && chars[x] !== 'L' && chars[x] !== 'M' && chars[x] !== 'N' && chars[x] !== 'P' && chars[x] !== 'Q' && chars[x] !== 'R' && chars[x] !== 'S' && chars[x] !== 'T' && chars[x] !== 'V' && chars[x] !== 'Y' && chars[x] !== 'W' && chars[x] !== 'U' && chars[x] !== 'O' && chars[x] !== 'X')
-					throw Error('Not a valid FASTA - Invalid character in sequence header1')
+				if (VALIDCHAR.indexOf(chars[x]) === -1) {
+					throw Error(
+						'Not a valid FASTA - Invalid character in sequence ' + this.headers[this.headers.length - 1]
+					)
+				}
 				sequencesToPush += chars[x]
 			}
 		}
